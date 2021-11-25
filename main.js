@@ -15,12 +15,12 @@ async function getQuoted() {
     /*
         (1) fetch data from the API, 
         (2) transform it into JSON object  
-        (3) select the quote fromt he Promise
+        (3) select the quote from the Promise
     */
       response = await fetch('https://api.kanye.rest/')
         .then((response) => response.json()) 
         .then((data) => {
-        header = header1.innerHTML = data.quote;
+       let header = header1.innerHTML = data.quote;
         historyString(header);
     });
 }
@@ -37,8 +37,7 @@ newButton.addEventListener("click", getQuoted,false);
 //create a function that take a string
 //create an order list
 let orderList = document.querySelector("#kanye-quote-history");
-list.setAttribute("id","list-one");
-orderList.appendChild(list);
+
 
 function historyString(header) {
     let string = `${header}`;
